@@ -173,8 +173,6 @@ public class Juego15JFrame extends javax.swing.JFrame implements KeyListener {
         jLabel16.setAlignmentY(0.0F);
         jPanel1.add(jLabel16);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.WEST);
-
         jPanel2.setMaximumSize(new java.awt.Dimension(110, 330));
         jPanel2.setMinimumSize(new java.awt.Dimension(110, 330));
         jPanel2.setPreferredSize(new java.awt.Dimension(110, 330));
@@ -215,7 +213,21 @@ public class Juego15JFrame extends javax.swing.JFrame implements KeyListener {
         });
         jPanel2.add(jButton3);
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.EAST);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
