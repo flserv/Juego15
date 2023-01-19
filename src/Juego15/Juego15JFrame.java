@@ -566,18 +566,20 @@ public class Juego15JFrame extends javax.swing.JFrame implements KeyListener {
             miImagen = miImagen.getScaledInstance(320, 320, java.awt.Image.SCALE_SMOOTH);
             String nombreNuevoArchivoTiles = miFileChooser.getSelectedFile().getName();
             nombreNuevoArchivoTiles = nombreNuevoArchivoTiles.substring(0, nombreNuevoArchivoTiles.lastIndexOf("."));
-            nombreNuevoArchivoTiles += ".pzl";
+            //nombreNuevoArchivoTiles += ".pz1";
             int posX;
             int posY;
             //Se divide la imagen en piezas de 80x80 y se almacenan en un array de ImageIcon
-            for (int i = 0; i < tiles.length - 1; i++) {
+            for (int i = 0; i < tiles.length; i++) {
                 posX = (i * 80) % 320;
                 posY = i / 4 * 80;
                 tiles[i] = new ImageIcon(toBufferedImage(miImagen).getSubimage(posX, posY, 80, 80));
             }
+            /*
             //La última pieza es un cuadrado negro
             tiles[15] = new javax.swing.ImageIcon(getClass().getResource("/Images/negro.png"));
-            //Se guarda el array en un archivo con el mismo nombre del archivo de imagen original y la extensión "pzl".
+            */
+            //Se guarda el array en un archivo con el mismo nombre del archivo de imagen original y la extensión "pz1".
             FileOutputStream fileOut = new FileOutputStream(nombreNuevoArchivoTiles);
             ObjectOutputStream outStream = new ObjectOutputStream(fileOut);
             outStream.writeObject(tiles);
